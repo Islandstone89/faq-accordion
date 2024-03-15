@@ -32,6 +32,13 @@ button, input, label {
   line-height: 1.1;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
 /* Avoid orphans on paragraphs */
 p {
     text-wrap: pretty;
@@ -122,40 +129,36 @@ textarea:not([rows]) {
 
 /* COMPONENTS */
 
-button {
+.disclosure-btn {
+  text-wrap: balance;
   border: none;
   background-color: transparent;
-  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: var(--fw-700);
+  width: 100%;
+  display: flex;
+  gap: .5em;
+  justify-content: space-between;
+  align-items: center;
 
-}
+  &:hover {
+    cursor: pointer;
+    color: var(--clr-purple);
+  }
 
-.question:has(button[aria-expanded="false"]) {
-  .answer {
-    color: red;
-    display: none;
+  &[aria-expanded="false"] {
+    + .answer {
+      display: none;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    + .answer {
+      display: block;
+    }
   }
 }
 
-.question:has(button[aria-expanded="true"]) {
-  .answer {
-    color: green;
-    display: block;
-  }
-}
-
-.disclosure-btn[aria-expanded="false"] {
-  + .answer {
-    color: red;
-    display: none;
-  }
-}
-
-.disclosure-btn[aria-expanded="false"] {
-  + .answer {
-    color: green;
-    display: block;
-  }
-}
 
 
 /* GENERAL STYLING */
@@ -177,11 +180,11 @@ body {
 
 .card {
     background-color: var(--clr-white);
-    max-width: 40rem;
+    max-width: 50rem;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, .2);
-    margin: -10% 1rem 0 1rem;
+    margin: -12% 2rem 0 2rem;
 }
 
 .card-header {
@@ -190,19 +193,10 @@ body {
     align-items: center;
 }
 
-
-.question-heading-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.question-heading:hover {
-  color: var(--clr-purple);
-}
-
 .answer {
   line-height: 1.4;
+  color: var(--clr-grayish-purple);
+  /* padding-inline: 2rem; */
 }
 
 hr {
