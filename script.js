@@ -12,19 +12,6 @@ let icons = document.querySelectorAll(".icon");
 function toggleDisclosure() {
     let isExpanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', !isExpanded);
-    let icon = this.firstElementChild;
-    
-    if (icon.getAttribute("src", "assets/images/icon-plus.svg")) {
-        icon.setAttribute("src", "assets/images/icon-minus.svg")
-    }
-
-    else if (icon.getAttribute("src", "assets/images/icon-minus.svg")) {
-        icon.setAttribute("src", "assets/images/icon-plus.svg")
-    }
-    
-    else {
-        return;
-    }
 }
 
 /* Loop through the buttons, add event listener */

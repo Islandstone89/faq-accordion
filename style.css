@@ -129,6 +129,12 @@ textarea:not([rows]) {
 
 /* COMPONENTS */
 
+
+
+.icon-minus {
+  display: none;
+}
+
 .disclosure-btn {
   text-wrap: balance;
   border: none;
@@ -150,10 +156,22 @@ textarea:not([rows]) {
     + .answer {
       display: none;
     }
+    .icon-plus {
+      display: block;
+    }
+    .icon-minus {
+      display: none;
+    }
   }
 
   &[aria-expanded="true"] {
     + .answer {
+      display: block;
+    }
+    .icon-plus {
+      display: none;
+    }
+    .icon-minus {
       display: block;
     }
   }
