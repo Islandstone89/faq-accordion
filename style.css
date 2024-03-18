@@ -153,7 +153,7 @@ textarea:not([rows]) {
   }
 
   &[aria-expanded="false"] {
-    + #answer {
+    + .answer {
       display: none;
     }
     .icon-plus {
@@ -165,7 +165,7 @@ textarea:not([rows]) {
   }
 
   &[aria-expanded="true"] {
-    + #answer {
+    + .answer {
       display: block;
     }
     .icon-plus {
@@ -211,10 +211,10 @@ body {
     align-items: center;
 }
 
-#answer {
+.answer {
   line-height: 1.4;
   color: var(--clr-grayish-purple);
-  max-width: 50ch;
+  max-width: 60ch;
 }
 
 hr {
