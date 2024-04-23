@@ -10,9 +10,13 @@ let icons = document.querySelectorAll(".icon");
 /* Create toggle function */
 
 function toggleDisclosure() {
-    let isExpanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', !isExpanded);
-}
+    if (this.getAttribute("aria-expanded") === "true") {
+      disclosureButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+    } else {
+      disclosureButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+      this.setAttribute("aria-expanded", "true");
+    }
+  }
 
 /* Loop through the buttons, add event listener */
 
